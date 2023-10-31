@@ -74,8 +74,9 @@ class BarChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: messageCountList.length,
+      itemCount: 25,
       shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (context, index) {
         final sender = messageCountList[index].key;
         final count = messageCountList[index].value;
@@ -102,7 +103,11 @@ class BarChart extends StatelessWidget {
               child: Row(
                 children: [
                   Container(
-                    width: count.toDouble(), // Adjust the width as needed
+                    width: count *
+                        (MediaQuery.of(context).size.width / 2) /
+                        (MediaQuery.of(context)
+                            .size
+                            .width), // Adjust the width as needed
                     height: 20,
                     color: Colors.blue.withAlpha(255 - index * 12),
                   ),

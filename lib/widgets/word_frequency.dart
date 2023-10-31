@@ -76,30 +76,25 @@ class WordFrequencyAnalysisWidgetState
                   style: TextStyle(fontSize: 18)),
             ),
             const SizedBox(height: 20),
-            SizedBox(
-              height: 200,
-              child: FutureBuilder<void>(
-                future: wordFrequencyFuture,
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    return const CircularProgressIndicator();
-                  } else {
-                    return Expanded(
-                      child: Wrap(
-                        spacing: 10, // Adjust the spacing between chips
-                        runSpacing: 10, // Adjust the run (line) spacing
-                        children: sortedWordFrequencyList.take(25).map((entry) {
-                          final word = entry.key;
-                          final frequency = entry.value;
-                          return Chip(
-                            label: Text('$word - $frequency times'),
-                          );
-                        }).toList(),
-                      ),
-                    );
-                  }
-                },
-              ),
+            FutureBuilder<void>(
+              future: wordFrequencyFuture,
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const CircularProgressIndicator();
+                } else {
+                  return Wrap(
+                    spacing: 10, // Adjust the spacing between chips
+                    runSpacing: 10, // Adjust the run (line) spacing
+                    children: sortedWordFrequencyList.take(25).map((entry) {
+                      final word = entry.key;
+                      final frequency = entry.value;
+                      return Chip(
+                        label: Text('$word - $frequency times'),
+                      );
+                    }).toList(),
+                  );
+                }
+              },
             ),
           ],
         ),
