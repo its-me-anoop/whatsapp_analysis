@@ -1,16 +1,12 @@
-# whatsapp_analysis
+# WhatsApp Chat Analysis
 
-A new Flutter project.
+WhatsApp Chat Analysis is a Flutter application that allows you to analyze your WhatsApp chat data and gain insights into your chat messages, media attachments, and word frequency.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Import your WhatsApp chat data from a text file.
+- Analyze your chat messages, including text and media attachments (images, videos, documents).
+- View the total number of messages in the chat.
+- Get insights into media attachments (images, videos, documents) and their distribution.
+- Explore word frequency analysis to see which words are used most frequently in your chat.
+- Find the most active users.
