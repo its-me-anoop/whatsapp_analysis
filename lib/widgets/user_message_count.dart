@@ -74,7 +74,7 @@ class BarChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 25,
+      itemCount: messageCountList.length,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (context, index) {
@@ -109,7 +109,7 @@ class BarChart extends StatelessWidget {
                             .size
                             .width), // Adjust the width as needed
                     height: 20,
-                    color: Colors.blue.withAlpha(255 - index * 12),
+                    color: Colors.blue,
                   ),
                   const SizedBox(
                     width: 10,
