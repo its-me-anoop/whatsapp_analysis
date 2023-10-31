@@ -1,5 +1,3 @@
-// ignore_for_file: library_private_types_in_public_api
-
 import 'package:flutter/material.dart';
 import 'package:whatsapp_analysis/models/chat_message.dart';
 
@@ -10,11 +8,11 @@ class MessageCountAnalysisWidget extends StatefulWidget {
       : super(key: key);
 
   @override
-  _MessageCountAnalysisWidgetState createState() =>
-      _MessageCountAnalysisWidgetState();
+  MessageCountAnalysisWidgetState createState() =>
+      MessageCountAnalysisWidgetState();
 }
 
-class _MessageCountAnalysisWidgetState
+class MessageCountAnalysisWidgetState
     extends State<MessageCountAnalysisWidget> {
   List<MapEntry<String, int>> messageCountList = [];
 

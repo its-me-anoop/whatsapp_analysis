@@ -1,5 +1,3 @@
-// ignore_for_file: library_private_types_in_public_api
-
 import 'package:flutter/material.dart';
 import 'package:whatsapp_analysis/models/chat_message.dart';
 
@@ -10,11 +8,11 @@ class WordFrequencyAnalysisWidget extends StatefulWidget {
       : super(key: key);
 
   @override
-  _WordFrequencyAnalysisWidgetState createState() =>
-      _WordFrequencyAnalysisWidgetState();
+  WordFrequencyAnalysisWidgetState createState() =>
+      WordFrequencyAnalysisWidgetState();
 }
 
-class _WordFrequencyAnalysisWidgetState
+class WordFrequencyAnalysisWidgetState
     extends State<WordFrequencyAnalysisWidget> {
   late List<MapEntry<String, int>> sortedWordFrequencyList;
   late Future<void> wordFrequencyFuture;

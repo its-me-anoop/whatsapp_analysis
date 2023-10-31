@@ -6,8 +6,13 @@ import 'package:whatsapp_analysis/models/chat_message.dart';
 class MessageCountWidget extends StatelessWidget {
   final List<ChatMessage> chatMessages;
 
-  const MessageCountWidget({super.key, required this.chatMessages});
+  // Constructor for MessageCountWidget
+  const MessageCountWidget({
+    super.key,
+    required this.chatMessages,
+  });
 
+  // Calculate the total message count
   int getTotalMessageCount() {
     return chatMessages.length;
   }

@@ -1,5 +1,3 @@
-// ignore_for_file: library_private_types_in_public_api
-
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsapp_analysis/models/chat_message.dart';
@@ -8,14 +6,20 @@ import 'package:whatsapp_analysis/widgets/indicator.dart';
 class MediaAnalysisWidget extends StatefulWidget {
   final List<ChatMessage> chatMessages;
 
-  const MediaAnalysisWidget({super.key, required this.chatMessages});
+  // Constructor for MediaAnalysisWidget
+  const MediaAnalysisWidget({
+    super.key,
+    required this.chatMessages,
+  });
 
   @override
-  _MediaAnalysisWidgetState createState() => _MediaAnalysisWidgetState();
+  MediaAnalysisWidgetState createState() => MediaAnalysisWidgetState();
 }
 
-class _MediaAnalysisWidgetState extends State<MediaAnalysisWidget> {
+class MediaAnalysisWidgetState extends State<MediaAnalysisWidget> {
   int touchedIndex = -1;
+
+  // Calculate media analysis data
   Map<String, int> getMediaAnalysis() {
     Map<String, int> mediaCount = {
       'Images': 0,
@@ -82,8 +86,10 @@ class _MediaAnalysisWidgetState extends State<MediaAnalysisWidget> {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: <Widget>[
-            const Text('Media Analysis',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            const Text(
+              'Media Analysis',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
             const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -93,6 +99,7 @@ class _MediaAnalysisWidgetState extends State<MediaAnalysisWidget> {
                   height: 200,
                   width: 200,
                   child: PieChart(
+                    // Pie chart to display media analysis
                     PieChartData(
                       pieTouchData: PieTouchData(
                         touchCallback: (FlTouchEvent event, pieTouchResponse) {
@@ -150,7 +157,6 @@ class _MediaAnalysisWidgetState extends State<MediaAnalysisWidget> {
                           titlePositionPercentageOffset: 0.55,
                         );
                       }).toList(),
-                      // Add the animation properties
                     ),
                     swapAnimationDuration: const Duration(milliseconds: 150),
                     swapAnimationCurve: Curves.linear,

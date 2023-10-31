@@ -1,5 +1,3 @@
-// ignore_for_file: library_private_types_in_public_api
-
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -14,13 +12,17 @@ import 'package:whatsapp_analysis/widgets/word_frequency.dart';
 class ChatScreen extends StatefulWidget {
   final List<ChatMessage> chatMessages;
 
-  const ChatScreen({super.key, required this.chatMessages});
+  // Constructor for ChatScreen
+  const ChatScreen({
+    super.key,
+    required this.chatMessages,
+  });
 
   @override
-  _ChatScreenState createState() => _ChatScreenState();
+  ChatScreenState createState() => ChatScreenState();
 }
 
-class _ChatScreenState extends State<ChatScreen> {
+class ChatScreenState extends State<ChatScreen> {
   List<ChatMessage> chatMessages = [];
 
   bool isImportingData = false;
@@ -67,7 +69,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     MessageCountWidget(chatMessages: chatMessages),
                     MediaAnalysisWidget(chatMessages: chatMessages),
                     WordFrequencyAnalysisWidget(chatMessages: chatMessages),
-                    MessageCountAnalysisWidget(chatMessages: chatMessages)
+                    MessageCountAnalysisWidget(chatMessages: chatMessages),
                   ],
                 ),
               ),
